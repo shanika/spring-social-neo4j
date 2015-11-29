@@ -4,8 +4,8 @@
   <artifactId>spring-social-neo4j</artifactId>
   <versioning>
     <versions>
-      <version>0.0.1-SNAPSHOT</version>
+      <version>0.0.2-SNAPSHOT</version>
     </versions>
-    <lastUpdated>20151129173754</lastUpdated>
+    <lastUpdated>20151129174016</lastUpdated>
   </versioning>
 </metadata>
