@@ -4,3 +4,19 @@ language: java
 branches:
   except:
     - mvn-repo
+    
+env:
+  global:
+   # The next declaration is the encrypted COVERITY_SCAN_TOKEN, created
+   #   via the "travis encrypt" command using the project repo's public key
+   - secure: "FNFbOHTYIw5BNHhTLQgHkwAxPpe8voCmxH8ZhHoWRqCscxTOPQMAPTs8g75YimJ1RqJCFIhWEidoE+Pv4cJivWjxfd87UMYysE4QFw9nZM05FCK85Xp29Uf940HDJ2KReRgBecg+B/rwwhtsilD/yhYlde33IYO9YUpHeXqk+jjg4iXFP2FN+ote86s2OqMeMWYR4nO6ntVEOWmNRGHn5BpklouKJoajNQjtMLRzURkAU4Ytljy+KLGa8UgQg29ZhhFYnslh+20wjha/q6R0Qok4brdJEp16a9TuP8tfKXSelF6fcCYzCyEZkLZ+Q1O9b10g/ZsvLZCmYq87tR5xtvUoog53Ol03h+kpy/hdoBGs9lLuM+vwxAA4+MTMyiK1cPjCg9bfTpSNfgGZRrfPYnHDL23ySoIhWiifau/jbMTWCUqobaIAABt7fqwTyQ8kQbAbECy8Ei/YMXABlrQEyz31Bf7Kay/VPBiadaGxv84VtZZsTyd1Y3sQurp0gmhkO2h8xsQwbFkVsAx/9o/GBO8fugile1NBGrsbVkjncIP+CcpgO0Hlr8gQ+6/8kR2BX2E0HIvdIAXHzz76C8tDo/CFjuDTbg8a+XgMaoSsluIbHesaV5XO02XukP26sMHHVEEALxJkmpXV40WzKHkxcvb4AHNqXXJYkKc8//LSY/4="
+    
+addons:
+  coverity_scan:
+    project:
+      name: "shanika/spring-social-neo4j"
+      description: "Build submitted via Travis CI"
+    notification_email: shanikacj@gmail.com
+    build_command_prepend: "mvn clean"
+    build_command:   "mvn -DskipTests=true compile"
+    branch_pattern: coverity_scan
